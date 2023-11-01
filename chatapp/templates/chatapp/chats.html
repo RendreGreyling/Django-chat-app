@@ -1,0 +1,16 @@
+{% extends "coreapp/base.html" %}
+{% block title %}Chats{% endblock %}
+
+
+{% block content %}
+    
+    <div class="chat-container">
+        {% for chat in chats %}
+            <div class="chat-block">
+                <h2>{{chat.name}}</h2>
+
+                <a href="{% url 'chat' chat.slug %}">Join</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
